@@ -80,10 +80,10 @@
 						<ul>
 							
 							<li class="header-top-contact">
-								<a href="login.html">sign in</a>
+								<a href="login.php">sign in</a>
 							</li>
 							<li class="header-top-contact">
-								<a href="#">register</a>
+								<a href="login.php">register</a>
 							</li>
 						</ul>
 					</div>
@@ -162,7 +162,7 @@
 						</div>
 					</div>
 					<div class="welcome-hero-serch">
-						<button class="welcome-hero-btn" onclick="window.location.href='recherche.html'">
+						<button class="welcome-hero-btn" onclick="window.location.href='recherche.php'">
 							 search  <i data-feather="search"></i> 
 						</button>
 					</div>

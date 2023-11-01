@@ -78,13 +78,13 @@
                     <ul>
                         
                         <li class="header-top-contact">
-                            <a href="login.html">sign in</a>
+                            <a href="login.php">sign in</a>
                         </li>
                         <li class="header-top-contact">
-                            <a href="login.html">register</a>
+                            <a href="login.php">register</a>
                         </li>
                         <li class="header-top-contact">
-                            <a href="index.html">home</a>
+                            <a href="index.php">home</a>
                         </li>
                     </ul>
                 </div>
