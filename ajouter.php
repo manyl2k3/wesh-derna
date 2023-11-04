@@ -94,7 +94,8 @@
 
 
 
-    
+
+     
     <!-- top-area Start -->
     <section class="top-area">
         <div class="header-area">
@@ -135,17 +136,19 @@
 
         <div class= titre>
                     titre
+                    <input type="text" name="title" id="title">
                 </div>
 
 <div class="images">
-
+    
+<h2>image:</h2>
 
         <div class="explore-content">
 					<div class="row">
 						<div class=" col-md-4 col-sm-6">
 							<div class="single-explore-item">
 								<div class="single-explore-img">
-									<img src="assets/images/explore/e1.jpg" alt="explore image">
+									<img src="" alt="explore image">
 									<div class="single-explore-img-info">
 										
 										<div class="single-explore-image-icon-box">
@@ -172,33 +175,12 @@
                 </div>
                                
           <div class= "description" >
-            <p1>
-Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error alias quos voluptate eum sit molestiae assumenda quae, adipisci animi est nulla! Sint corporis beatae accusantium minus. Illum fugit corrupti adipisci!
-<br>
-Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis incidunt expedita accusantium quidem consequuntur eius sapiente magni doloribus quaerat autem ullam provident saepe optio rerum obcaecati repellendus enim, libero nulla.
-</p1>          
+            <h1>  description:</h1>
+         
+          <input type="text" name="desc" id="desc">
  
-</div> 
 
-
-<div class="prix">
-prix: 2000da
-
-</div>
-
-<div class="date">
-j/m/a
-
-</div>
-
-<div class="tel" >
-    tel: 05554333555
-</div>
-
-<div class="adresse" >
-    adresse: la bas
-</div>
-     
+</div>      
                 
 <div class="diaporama">
 <img src="assets\images\blog\b1.jpg" alt=""  class="img1">
