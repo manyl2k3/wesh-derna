@@ -118,7 +118,7 @@
 			            <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
 			                <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
 			                  
-                            <li class=" scroll active"><a href="recherhce.php">back</a></li>
+                            <li class=" scroll active"><a href="recherche.php">back</a></li>
                                 <li class=" scroll active"><a href="index.php">home</a></li>
 			                    <li class="scroll"><a href="#blog">blog</a></li>
 			                    <li class="scroll"><a href="#contact">contact</a></li>

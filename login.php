@@ -13,12 +13,13 @@
 
 	</head>
 	<body class="img js-fullheight" style="background-image: url(images/bg.jpg);">
+	<a href="index.php"> back</a>
 	<section class="ftco-section">
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-md-6 text-center mb-5">
 					<h2 class="heading-section">Login #10</h2>
-					<a href="index.php"> back</a>
+					
 				</div>
 			</div>
 			<div class="row justify-content-center">

@@ -148,7 +148,7 @@
 						<div class=" col-md-4 col-sm-6">
 							<div class="single-explore-item">
 								<div class="single-explore-img">
-									<img src="" alt="explore image">
+									<img src="assets\images\welcome-hero\Design sans titre.pdf" alt="explore image">
 									<div class="single-explore-img-info">
 										
 										<div class="single-explore-image-icon-box">
