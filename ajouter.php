@@ -140,7 +140,7 @@
                 </div>
 
 <div class="images">
-    
+
 <h2>image:</h2>
 
         <div class="explore-content">
@@ -181,7 +181,34 @@
  
 
 </div>      
-                
+        
+
+
+<div class="prix">
+prix: 
+<input type="text" name="price" id="price">
+
+</div>
+
+<div class="date">
+    date: j/m/a
+    <input type="text" name="date" id="date">
+</div>
+
+<div class="tel" >
+    tel: 
+    <input type="text" name="tel" id="tel">
+</div>
+
+<div class="adresse" >
+    adresse:
+    <input type="text" name="adresse" id="adresse">
+</div>
+     
+
+
+
+
 <div class="diaporama">
 <img src="assets\images\blog\b1.jpg" alt=""  class="img1">
 <img src="assets\images\blog\b2.jpg" alt=""  class="img2">
