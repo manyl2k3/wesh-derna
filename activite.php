@@ -137,6 +137,8 @@
                     titre
                 </div>
 
+<div class="images">
+
 
         <div class="explore-content">
 					<div class="row">
@@ -167,7 +169,7 @@
 					</div>
                 </div>
 
-
+                </div>
                                
           <div class= "description" >
             <p1>
@@ -175,13 +177,22 @@ Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error alias quos volup
 <br>
 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis incidunt expedita accusantium quidem consequuntur eius sapiente magni doloribus quaerat autem ullam provident saepe optio rerum obcaecati repellendus enim, libero nulla.
 </p1>          
+ 
 
-
-            <p2>
-Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error alias quos voluptate eum sit molestiae assumenda quae, adipisci animi est nulla! Sint corporis beatae accusantium minus. Illum fugit corrupti adipisci!
-</p2>          
 </div>      
                 
+<div class="diaporama">
+<img src="assets\images\blog\b1.jpg" alt=""  class="img1">
+<img src="assets\images\blog\b2.jpg" alt=""  class="img2">
+<img src="assets\images\blog\b3.jpg" alt=""  class="img3" >
+
+</div>
+
+
+
+
+
+
 
 
 </body>

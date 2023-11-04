@@ -66,15 +66,16 @@
                             </a>
                             <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
-                                        Authentication
+                                    <a class="nav-link collapsed" href="index.php" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
+                                        home
                                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                     </a>
                                     <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                                         <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="login.html">Login</a>
-                                            <a class="nav-link" href="register.html">Register</a>
-                                            <a class="nav-link" href="password.html">Forgot Password</a>
+                                        <a class="nav-link" href="index.php">home</a>
+                                            <a class="nav-link" href="login.php">Login</a>
+                                            <a class="nav-link" href="login.php">Register</a>
+                                           
                                         </nav>
                                     </div>
                                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
@@ -683,49 +684,53 @@
         <script src="assets/demo/chart-bar-demo.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
         <script src="js/datatables-simple-demo.js"></script>
+    
+    
+    
+    
+    
+    
+        
+            <?php
+
+    $pdo = new PDO("mysql:host=localhost;dbname=problems_reports", "root");
+
+
+    $query = "SELECT ID, problem_description, reported_by, date_reported, status FROM problem_reports";
+
+    $result = $pdo->query($query);
+
+
+    if (!$result) {
+        die("Error in query: " . $pdo->errorInfo());
+    }
+    ?>
+
+        <h1>Problem Reports</h1>
+        <table border="1">
+            <tr>
+                <th>ID</th>
+                <th>Description</th>
+                <th>Reported By</th>
+                <th>Date Reported</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+            <?php while ($row = $result->fetch(PDO::FETCH_ASSOC)): ?>
+               <tr>
+                    <td><?= $row['id'] ?></td>
+                    <td><?= $row['problem_description'] ?></td>
+                    <td><?= $row['reported_by'] ?></td>
+                    <td><?= $row['date_reported'] ?></td>
+                    <td><?= $row['status'] ?></td>
+                  
+                </tr>
+            <?php endwhile; ?>
+        </table>
+        
+        
+        
     </body>
 </html>
-<?php
 
-$pdo = new PDO("mysql:host=localhost;dbname=problems_reports", "root");
-
-
-$query = "SELECT ID, problem_description, reported_by, date_reported, status FROM problem_reports";
-
-$result = $pdo->query($query);
-
-
-if (!$result) {
-    die("Error in query: " . $pdo->errorInfo());
-}
-?>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Admin Dashboard</title>
-</head>
-<body>
-    <h1>Problem Reports</h1>
-    <table border="1">
-        <tr>
-            <th>ID</th>
-            <th>Description</th>
-            <th>Reported By</th>
-            <th>Date Reported</th>
-            <th>Status</th>
-            <th>Action</th>
-        </tr>
-        <?php while ($row = $result->fetch(PDO::FETCH_ASSOC)): ?>
-            <tr>
-                <td><?= $row['id'] ?></td>
-                <td><?= $row['problem_description'] ?></td>
-                <td><?= $row['reported_by'] ?></td>
-                <td><?= $row['date_reported'] ?></td>
-                <td><?= $row['status'] ?></td>
-                <td><a href="admin_action.php?id=<?= $row['id']">Take Action</a></td>
-            </tr>
-        <?php endwhile; ?>
-    </table>
-</body>
-</html>
 

@@ -456,7 +456,10 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
     padding:117px 0 95px;
     background: #f8fafb;
 }
-.explore-content{margin-top: 78px; margin-left: 78px;}
+.explore-content{
+    grid-row: 1/1;
+    grid-column: 1/2;
+    margin-top: 78px; margin-left: 78px;}
 
 .single-explore-item {
     background: #fff;
@@ -607,8 +610,8 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
 .description{
     display: grid;
 
-    grid-template-columns: 400px 400px;
-  grid-template-rows: 200px 200px;
+    grid-template-columns: 600px 600px;
+  grid-template-rows: 400px 400px;
   gap: 10px;
     margin-top: 45px; margin-left: 65px;
     position: relative;
@@ -621,13 +624,36 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
     grid-column: 1/2;
 }
 
-
-.description p2{
-
-    grid-row: 1;
-    grid-column: 2/2;
+image{
+    display: grid;
 }
 
+
+
+
+
+.diaporama {
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  
+  .diaporama img {
+    display: inline-block;
+    width: 30%;
+    height: 100%;
+    margin-left: 25px;
+    margin-right: 25px;
+    animation: defilement 10s linear infinite;
+  }
+  
+  @keyframes defilement {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
 
 
 /*-------------------------------------
