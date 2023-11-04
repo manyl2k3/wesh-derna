@@ -107,7 +107,7 @@
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                             <i class="fa fa-bars"></i>
                         </button>
-                        <a class="navbar-brand" href="index.html">wesh<span>derna</span></a>
+                        <a class="navbar-brand" href="index.php">wesh<span>derna</span></a>
 
                     </div><!--/.navbar-header-->
                     <!-- End Header Navigation -->
@@ -117,7 +117,7 @@
 			            <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
 			                <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
 			                  
-                                <li class=" scroll active"><a href="index.html">home</a></li>
+                                <li class=" scroll active"><a href="index.php">home</a></li>
 			                    <li class="scroll"><a href="#blog">blog</a></li>
 			                    <li class="scroll"><a href="#contact">contact</a></li>
 			                </ul><!--/.nav -->
@@ -142,6 +142,9 @@
 					<h2>explore</h2>
 					<p>Explore New place, food, culture around the world and many more</p>
 				</div><!--/.section-header-->
+
+
+				
 				<div class="explore-content">
 					<div class="row">
 						<div class=" col-md-4 col-sm-6">
@@ -167,7 +170,7 @@
 									</div>
 								</div>
 								<div class="single-explore-txt bg-theme-1">
-									<h2><a href="activite.html">tommy helfinger bar</a></h2>
+									<h2><a href="activite.php">tommy helfinger bar</a></h2>
 									<p class="explore-rating-price">
 										<span class="explore-rating">5.0</span>
 										<a href="#"> 10 ratings</a> 
@@ -211,6 +214,67 @@
 							</div>
 						</div>
 
+
+
+
+
+
+
+
+
+
+	<!--footer start-->
+	<footer id="footer"  class="footer">
+			<div class="container">
+				<div class="footer-menu">
+		           	<div class="row">
+			           	<div class="col-sm-3">
+			           		 <div class="navbar-header">
+				                <a class="navbar-brand" href="index.php">wesh<span>derna</span></a>
+				            </div><!--/.navbar-header-->
+			           	</div>
+			           	<div class="col-sm-9">
+			           		<ul class="footer-menu-item">
+			                    <li class="scroll"><a href="#works">how it works</a></li>
+			                    <li class="scroll"><a href="#explore">explore</a></li>
+			                    <li class="scroll"><a href="#reviews">review</a></li>
+			                    <li class="scroll"><a href="#blog">blog</a></li>
+			                    <li class="scroll"><a href="#contact">contact</a></li>
+			                    <li class=" scroll"><a href="#contact">my account</a></li>
+			                </ul><!--/.nav -->
+			           	</div>
+		           </div>
+				</div>
+				<div class="hm-footer-copyright">
+					<div class="row">
+						<div class="col-sm-5">
+							<p>
+								&copy;copyright. designed and developed by <a href="https://www.themesine.com/">themesine</a>
+							</p><!--/p-->
+						</div>
+						<div class="col-sm-7">
+							<div class="footer-social">
+								<span><i class="fa fa-phone"> +1  (222) 777 8888</i></span>
+								<a href="#"><i class="fa fa-facebook"></i></a>	
+								<a href="#"><i class="fa fa-twitter"></i></a>
+								<a href="#"><i class="fa fa-linkedin"></i></a>
+								<a href="#"><i class="fa fa-google-plus"></i></a>
+							</div>
+						</div>
+					</div>
+				
+				</div><!--/.hm-footer-copyright-->
+			</div><!--/.container-->
+
+			<div id="scroll-Top">
+				<div class="return-to-top">
+					<i class="fa fa-angle-up " id="scroll-top" data-toggle="tooltip" data-placement="top" title="" data-original-title="Back to Top" aria-hidden="true"></i>
+				</div>
+				
+			</div><!--/.scroll-Top-->
+			
+        </footer><!--/.footer-->
+		<!--footer end-->
 
 
 
