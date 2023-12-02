@@ -51,7 +51,9 @@
        <link rel="stylesheet" href="assets/css/responsive.css">
 
 
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
 
+</script>
 </head>
 <body>
     
@@ -133,7 +135,7 @@
 		</section><!-- /.top-area-->
 		<!-- top-area End -->
 
-
+<form action="">
         <div class= titre>
                     titre
                     <input type="text" name="title" id="title">
@@ -193,6 +195,24 @@ prix:
 <div class="date">
     date: j/m/a
     <input type="text" name="date" id="date">
+
+    <script>
+$(document).ready(function() {
+    $('#date').on('input', function() {
+        var dateInput = $(this).val();
+        var dateRegex = /^(?:(?:31([\/\.-])(?:0?[13578]|1[02]))\1|(?:(?:29|30)([\/\.-])(?:0?[13-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29([\/\.-])0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])([\/\.-])(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$/
+;
+        
+        if (dateRegex.test(dateInput)) {
+            $(this).css('border-color', 'green');
+        } else {
+            $(this).css('border-color', 'red');
+        }
+    });
+});
+
+</script>
+
 </div>
 
 <div class="tel" >
@@ -206,22 +226,19 @@ prix:
 </div>
      
 
-
-
-
-<div class="diaporama">
-<img src="assets\images\blog\b1.jpg" alt=""  class="img1">
-<img src="assets\images\blog\b2.jpg" alt=""  class="img2">
-<img src="assets\images\blog\b3.jpg" alt=""  class="img3" >
-
+<div id="button">
+<button>
+    <input type="submit" value="ajouter" name="ajouter" id="ajouter">
+</button>
 </div>
+</form>
 
 
 
 
 
 
-
+		     
 
 </body>
 </html>

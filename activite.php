@@ -51,6 +51,10 @@
        <link rel="stylesheet" href="assets/css/responsive.css">
 
 
+       <link rel="stylesheet" href="activité.css">
+
+
+
 
 </head>
 <body>
@@ -175,8 +179,6 @@
           <div class= "description" >
             <p1>
 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error alias quos voluptate eum sit molestiae assumenda quae, adipisci animi est nulla! Sint corporis beatae accusantium minus. Illum fugit corrupti adipisci!
-<br>
-Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis incidunt expedita accusantium quidem consequuntur eius sapiente magni doloribus quaerat autem ullam provident saepe optio rerum obcaecati repellendus enim, libero nulla.
 </p1>          
  
 </div> 
