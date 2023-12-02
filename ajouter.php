@@ -231,7 +231,39 @@ $(document).ready(function() {
     <input type="submit" value="ajouter" name="ajouter" id="ajouter">
 </button>
 </div>
+
+
+<script>
+$(document).ready(function() {
+    // Function to validate the form inputs
+    function validateForm() {
+
+        var titre = $('#titre').val();
+        var desc = $('#desc').val();
+        var price = $('#price').val();
+        var date = $('#date').val();
+        var tel = $('#tel').val();
+        var adresse = $('#adresse').val();
+
+        if (titre==='' || desc === '' || price === '' || date === '' || tel === '' || adresse === '') {
+            alert('Please complete all the inputs');
+            return false;
+        }
+
+        return true;
+    }
+
+    // Attach the form validation to the submit button
+    $('#ajouter').click(function() {
+        return validateForm();
+    });
+});
+</script>
 </form>
+</body>
+</html>
+
+*
 
 
 
