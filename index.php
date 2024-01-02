@@ -2,6 +2,9 @@
 <html class="no-js" lang="en">
 
     <head>
+
+	<?php session_start(); ?>
+
         <!-- meta data -->
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -52,10 +55,24 @@
 			<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+		<script src="logout.js"></script>
 
     </head>
 	
 	<body>
+
+
+<?php
+
+if(isset($_SESSION['username'])){
+	echo $_SESSION['username'];
+}
+
+?>
+
+
 		<!--[if lte IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
@@ -83,7 +100,13 @@
 								<a href="login.php">sign in</a>
 							</li>
 							<li class="header-top-contact">
-								<a href="login.php">register</a>
+								<form  id='logout'>
+									
+									<input type="submit" name="logout">
+								</form>
+							</li>
+							<li class="header-top-contact">
+								<a href="register.php">register</a>
 								
 							</li>
 						</ul>
@@ -109,6 +132,9 @@
 			                </button>
 			                <a class="navbar-brand" href="index.html">wesh<span>derna</span></a>
 
+
+
+
 			            </div><!--/.navbar-header-->
 			            <!-- End Header Navigation -->
 
@@ -116,8 +142,24 @@
 			            <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
 			                <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
 			                    <li class=" scroll active"><a href="#home">home</a></li>
-			                    <li ><a href="ajouter.php">add</a></li>
-								<li ><a href="dashboard.php">dashboard</a></li>
+
+								<?php 
+									if(isset($_SESSION['username'])){
+										
+?>
+										<li ><a href='ajouter.php'>add</a></li>
+<?php
+									}
+								?>
+
+								<?php 
+									if($_SESSION['isAdmin']==true){
+?>
+										<li ><a href='dashboard.php'>dashboard</a></li>
+<?php
+									}
+								?>
+								<!-- <li ><a href="dashboard.php">dashboard</a></li> -->
 			                    <li class="scroll"><a href="#explore">explore</a></li>
 			                    <li class="scroll"><a href="#reviews">review</a></li>
 			                    <li class="scroll"><a href="#blog">blog</a></li>
@@ -146,27 +188,30 @@
 					<div class="welcome-hero-form">
 						<div class="single-welcome-hero-form">
 							<h3>what?</h3>
-							<form action="index.html">
-								<input type="text" placeholder="Ex: evenement, activités..." />
-							</form>
+							<form action="recherche.php" method="POST">
+								<input type="text" id="type" name="type" placeholder="Ex: evenement, activités..." />
+							
 							<div class="welcome-hero-form-icon">
 								<i class="flaticon-list-with-dots"></i>
 							</div>
 						</div>
 						<div class="single-welcome-hero-form">
-							<h3>location</h3>
-							<form action="index.html">
-								<input type="text" placeholder="Ex: Alger, Oran, Bejaia..." />
-							</form>
+							<h3>wilaya</h3>
+							
+								<input type="text" id="location" name="location" placeholder="Ex: Alger, Oran, Bejaia..." />
+							
 							<div class="welcome-hero-form-icon">
 								<i class="flaticon-gps-fixed-indicator"></i>
 							</div>
 						</div>
 					</div>
 					<div class="welcome-hero-serch">
-						<button class="welcome-hero-btn" onclick="window.location.href='recherche.php'">
+						<button class="welcome-hero-btn" >
+							<input type="submit" name="sub" id="sub" style="display:none">
 							 search  <i data-feather="search"></i> 
 						</button>
+						
+</form>
 					</div>
 				</div>
 			</div>

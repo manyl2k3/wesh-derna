@@ -144,76 +144,163 @@
 				</div><!--/.section-header-->
 
 
-				
-				<div class="explore-content">
-					<div class="row">
-						<div class=" col-md-4 col-sm-6">
-							<div class="single-explore-item">
-								<div class="single-explore-img">
-									<img src="assets/images/explore/e1.jpg" alt="explore image">
-									<div class="single-explore-img-info">
-										<button onclick="window.location.href='#'">best rated</button>
-										<div class="single-explore-image-icon-box">
-											<ul>
-												<li>
-													<div class="single-explore-image-icon">
-														<i class="fa fa-arrows-alt"></i>
-													</div>
-												</li>
-												<li>
-													<div class="single-explore-image-icon">
-														<i class="fa fa-bookmark-o"></i>
-													</div>
-												</li>
-											</ul>
-										</div>
+								
+
+
+<?php
+
+
+echo '<h2>Activités</h2>';
+
+$wilaya1 = $_POST['location'];
+$categorie1 = $_POST['type'];
+
+$host = 'localhost';
+$dbname = 'weshderna';
+$username = 'root';
+$password = '';
+
+try {
+
+	$count = 0;
+	$pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+	$stmt = $pdo->prepare("SELECT * FROM activité WHERE wilaya = :wilaya AND categorie = :categorie");
+	$stmt->bindParam(':wilaya', $wilaya1);
+	$stmt->bindParam(':categorie', $categorie1);
+
+	$stmt->execute();
+
+	// Afficher les résultats
+	while ($row = $stmt->fetch()) {
+		$titre = $row['titre'];
+		$prix = $row['prix'];
+		$description = $row['description'];
+		$image = $row['image'];
+		$date = $row['date'];
+		$adresse = $row['adresse'];
+		$wilaya = $row['wilaya'];
+		$categorie = $row['categorie'];
+		$note = $row['note'];
+		$createur = $row['createur'];
+		$tel = $row['tel'];
+		$activité_id = $row['activité_id'];
+		
+
+?>
+
+<a href="activite.php">
+<div class="explore-content">
+	
+	<div class="row">
+		<div class="col-md-4 col-sm-6">
+			<div class="single-explore-item">
+				<div class="single-explore-img">
+					<img src="<?php echo $image; ?>" alt="explore image">
+					<div class="single-explore-img-info">
+					
+					<form action="activite.php" method="get">
+  <input type="hidden" name="id" value="<?php echo $activité_id; ?>">
+  <input type="submit" value="Consulter">
+</form>
+						<div class="single-explore-image-icon-box">
+							<ul>
+								<li>
+									<div class="single-explore-image-icon">
+										<i class="fa fa-arrows-alt"></i>
 									</div>
+								</li>
+								<li>
+									<div class="single-explore-image-icon">
+										<i class="fa fa-bookmark-o"></i>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="single-explore-txt bg-theme-1">
+					<h2><a href="activite.php"><?php echo $titre; ?></a></h2>
+					<p class="explore-rating-price">
+						<span class="explore-rating"><?php echo $note; ?></span>
+						<a href="#"> 10 ratings</a>
+						<span class="explore-price-box">
+							
+							<span class="explore-price"><?php echo $prix; ?></span>
+						</span>
+						<a href="#"><?php echo $categorie; ?></a>
+					</p>
+					<div class="explore-person">
+						<div class="row">
+							<div class="col-sm-2">
+								<div class="explore-person-img">
+									<a href="#">
+										<img src="assets/images/explore/person.png" alt="explore person">
+									</a>
 								</div>
-								<div class="single-explore-txt bg-theme-1">
-									<h2><a href="activite.php">tommy helfinger bar</a></h2>
-									<p class="explore-rating-price">
-										<span class="explore-rating">5.0</span>
-										<a href="#"> 10 ratings</a> 
-										<span class="explore-price-box">
-											form
-											<span class="explore-price">5$-300$</span>
-										</span>
-										 <a href="#">resturent</a>
-									</p>
-									<div class="explore-person">
-										<div class="row">
-											<div class="col-sm-2">
-												<div class="explore-person-img">
-													<a href="#">
-														<img src="assets/images/explore/person.png" alt="explore person">
-													</a>
-												</div>
-											</div>
-											<div class="col-sm-10">
-												<p>
-													Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incid ut labore et dolore magna aliqua.... 
-												</p>
-											</div>
-										</div>
-									</div>
-									<div class="explore-open-close-part">
-										<div class="row">
-											<div class="col-sm-5">
-												<button class="close-btn" onclick="window.location.href='#'">close now</button>
-											</div>
-											<div class="col-sm-7">
-												<div class="explore-map-icon">
-													<a href="#"><i data-feather="map-pin"></i></a>
-													<a href="#"><i data-feather="upload"></i></a>
-													<a href="#"><i data-feather="heart"></i></a>
-												</div>
-											</div>
-										</div>
-									</div>
+							</div>
+							<div class="col-sm-10">
+								<p>
+								<?php echo $description; ?>
+							</p>
+							</div>
+						</div>
+					</div>
+					<div class="explore-open-close-part">
+						<div class="row">
+							<div class="col-sm-5">
+								<button class="close-btn" onclick="window.location.href='#'">close now</button>
+							</div>
+							<div class="col-sm-7">
+								<div class="explore-map-icon">
+									<a href="#"><i data-feather="map-pin"></i></a>
+									<a href="#"><i data-feather="upload"></i></a>
+									<a href="#"><i data-feather="heart"></i></a>
 								</div>
 							</div>
 						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</a>
+</div>
 
+
+<?php
+	if($count == 2) {
+		echo '</br>';
+		$count = 0;
+	}
+}
+} catch(PDOException $e) {
+	echo "Erreur : " . $e->getMessage();
+}
+
+
+?>
+
+
+
+
+<!--footer start-->
+<footer id="footer" class="footer">
+	<div class="container">
+		<div class="footer-menu">
+			<div class="row">
+				<div class="col-sm-3">
+					<div class="navbar-header">
+						<a class="navbar-brand" href="index.php">wesh<span>derna</span></a>
+					</div><!--/.navbar-header-->
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+</footer>
 
 
 
@@ -280,3 +367,4 @@
 
 </body>
 </html>
+

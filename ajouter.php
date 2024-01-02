@@ -135,45 +135,18 @@
 		</section><!-- /.top-area-->
 		<!-- top-area End -->
 
-<form action="">
+<form action="" method = "POST">
         <div class= titre>
                     titre
                     <input type="text" name="title" id="title">
+                    
                 </div>
 
 <div class="images">
 
 <h2>image:</h2>
 
-        <div class="explore-content">
-					<div class="row">
-						<div class=" col-md-4 col-sm-6">
-							<div class="single-explore-item">
-								<div class="single-explore-img">
-									<img src="assets\images\welcome-hero\Design sans titre.pdf" alt="explore image">
-									<div class="single-explore-img-info">
-										
-										<div class="single-explore-image-icon-box">
-											<ul>
-												<li>
-													<div class="single-explore-image-icon">
-														<i class="fa fa-arrows-alt"></i>
-													</div>
-												</li>
-												<li>
-													<div class="single-explore-image-icon">
-														<i class="fa fa-bookmark-o"></i>
-													</div>
-												</li>
-											</ul>
-										</div>
-									</div>
-								</div>
-                            </div>
-						</div>
-					</div>
-                </div>
-
+<input type="text" name="image" id="image">
                 </div>
                                
           <div class= "description" >
@@ -193,15 +166,27 @@ prix:
 </div>
 
 <div class="date">
-    date: j/m/a
+    date: annee/mois/jour
     <input type="text" name="date" id="date">
+
+<div class="wilaya">
+    wilaya:
+    <input type="text" name="wilaya" id="wilaya">
+</div>
+
+<div class="categorie">
+    categorie:
+    <input type="text" name="categorie" id="categorie">
+</div>
+
+
+
 
     <script>
 $(document).ready(function() {
     $('#date').on('input', function() {
         var dateInput = $(this).val();
-        var dateRegex = /^(?:(?:31([\/\.-])(?:0?[13578]|1[02]))\1|(?:(?:29|30)([\/\.-])(?:0?[13-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29([\/\.-])0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])([\/\.-])(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$/
-;
+        var dateRegex = /^\d{4}\/\d{2}\/\d{2}$/;
         
         if (dateRegex.test(dateInput)) {
             $(this).css('border-color', 'green');
@@ -244,8 +229,12 @@ $(document).ready(function() {
         var date = $('#date').val();
         var tel = $('#tel').val();
         var adresse = $('#adresse').val();
+        var image = $('#image').val();
+        var categorie = $('#categorie').val();
+        var wilaya = $('#wilaya').val();
 
-        if (titre==='' || desc === '' || price === '' || date === '' || tel === '' || adresse === '') {
+
+        if (titre==='' || desc === '' || price === '' || date === '' || tel === '' || adresse === '' || image === '' || categorie === '' || wilaya === '') {
             alert('Please complete all the inputs');
             return false;
         }
@@ -259,18 +248,93 @@ $(document).ready(function() {
     });
 });
 </script>
+
+<?php
+include_once 'act.php';
+if (isset($_POST['title']) && isset($_POST['desc']) && isset($_POST['price']) && isset($_POST['date']) && isset($_POST['tel']) && isset($_POST['adresse']) && isset($_POST['image']) && isset($_POST['categorie']) && isset($_POST['wilaya'])) {
+    $titre = $_POST['title'];
+    $desc = $_POST['desc'];
+    $price = $_POST['price'];
+    $date = $_POST['date'];
+    $tel = $_POST['tel'];
+    $adresse = $_POST['adresse'];
+    $image = $_POST['image'];
+    $categorie = $_POST['categorie'];
+    $wilaya = $_POST['wilaya'];
+    $activite = new Activite($titre, $price, $date, $tel, $adresse, $wilaya, $categorie, $image, $desc, 2000);
+    $activite->save();
+}
+?>
+
+
+
 </form>
+
+
+	<!--footer start-->
+	<footer id="footer"  class="footer">
+			<div class="container">
+				<div class="footer-menu">
+		           	<div class="row">
+			           	<div class="col-sm-3">
+			           		 <div class="navbar-header">
+				                <a class="navbar-brand" href="index.php">wesh<span>derna</span></a>
+				            </div><!--/.navbar-header-->
+			           	</div>
+			           	<div class="col-sm-9">
+			           		<ul class="footer-menu-item">
+			                    <li class="scroll"><a href="#works">how it works</a></li>
+			                    <li class="scroll"><a href="#explore">explore</a></li>
+			                    <li class="scroll"><a href="#reviews">review</a></li>
+			                    <li class="scroll"><a href="#blog">blog</a></li>
+			                    <li class="scroll"><a href="#contact">contact</a></li>
+			                    <li class=" scroll"><a href="#contact">my account</a></li>
+			                </ul><!--/.nav -->
+			           	</div>
+		           </div>
+				</div>
+				<div class="hm-footer-copyright">
+					<div class="row">
+						<div class="col-sm-5">
+							<p>
+								&copy;copyright. designed and developed by <a href="https://www.themesine.com/">themesine</a>
+							</p><!--/p-->
+						</div>
+						<div class="col-sm-7">
+							<div class="footer-social">
+								<span><i class="fa fa-phone"> +1  (222) 777 8888</i></span>
+								<a href="#"><i class="fa fa-facebook"></i></a>	
+								<a href="#"><i class="fa fa-twitter"></i></a>
+								<a href="#"><i class="fa fa-linkedin"></i></a>
+								<a href="#"><i class="fa fa-google-plus"></i></a>
+							</div>
+						</div>
+					</div>
+				
+				</div><!--/.hm-footer-copyright-->
+			</div><!--/.container-->
+
+			<div id="scroll-Top">
+				<div class="return-to-top">
+					<i class="fa fa-angle-up " id="scroll-top" data-toggle="tooltip" data-placement="top" title="" data-original-title="Back to Top" aria-hidden="true"></i>
+				</div>
+				
+			</div><!--/.scroll-Top-->
+			
+        </footer><!--/.footer-->
+		<!--footer end-->
+
+
+
+
+
 </body>
 </html>
 
-*
 
 
 
 
 
 
-		     
-
-</body>
-</html>
+	
