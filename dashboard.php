@@ -12,6 +12,14 @@
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body class="sb-nav-fixed">
+
+
+<h1>Welcome to the Dashboard</h1>
+
+<h2>Problem Reports</h2>
+<?php include 'problem_reports.php'; ?>
+
+
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
             <a class="navbar-brand ps-3" href="index.html">Start Bootstrap</a>
@@ -684,53 +692,22 @@
         <script src="assets/demo/chart-bar-demo.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
         <script src="js/datatables-simple-demo.js"></script>
-    
-    
-    
-    
-    
-    
-        
-            <?php
-
-    $pdo = new PDO("mysql:host=localhost;dbname=problems_reports", "root");
-
-
-    $query = "SELECT ID, problem_description, reported_by, date_reported, status FROM problem_reports";
-
-    $result = $pdo->query($query);
-
-
-    if (!$result) {
-        die("Error in query: " . $pdo->errorInfo());
-    }
-    ?>
-
-        <h1>Problem Reports</h1>
-        <table border="1">
-            <tr>
-                <th>ID</th>
-                <th>Description</th>
-                <th>Reported By</th>
-                <th>Date Reported</th>
-                <th>Status</th>
-                <th>Action</th>
-            </tr>
-            <?php while ($row = $result->fetch(PDO::FETCH_ASSOC)): ?>
-               <tr>
-                    <td><?= $row['id'] ?></td>
-                    <td><?= $row['problem_description'] ?></td>
-                    <td><?= $row['reported_by'] ?></td>
-                    <td><?= $row['date_reported'] ?></td>
-                    <td><?= $row['status'] ?></td>
-                  
-                </tr>
-            <?php endwhile; ?>
-        </table>
-        
-        
         
     </body>
 </html>
 
 
+<!--<!DOCTYPE html> jai rajouté ca mais ca veut pas marcher regarde la ligne 17
+<html>
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+
+<h1>Welcome to the Dashboard</h1>
+
+<h2>Problem Reports</h2>
+<?php include 'problem_reports.php'; ?>
+
+</body>
+</html>
