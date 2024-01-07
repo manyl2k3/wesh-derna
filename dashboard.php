@@ -13,11 +13,54 @@
     </head>
     <body class="sb-nav-fixed">
 
+    <?php
+    
+try {
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "problem-reports";
+$bd = new PDO('mysql:host=localhost;dbname=problem-reports', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING));
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+$stmt = $pdo->prepare("SELECT * from problems-reports");
+
+
+
+$stmt->execute();
+}
+catch(PDOException $e) {
+    echo "Erreur : " . $e->getMessage();
+  }
+
+
+?>
 <h1>Welcome to the Dashboard</h1>
 
 <h2>Problem Reports</h2>
-<?php include 'problem_reports.php'; ?>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Description</th>
+        <th>Reported By</th>
+        <th>Date Reported</th>
+        <th>Statuts</th>
+        <th>Action</th>
+    </tr>
+    <?php while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) :?>
+       <tr>
+            <td><?= $row['ID'] ?></td>
+            <td><?= $row['problem_description'] ?></td>
+            <td><?= $row['statuts'] ?></td>
+            <td><?= $row['reported_by'] ?></td>
+            <td><?= $row['date_reported'] ?></td>
+            <td>
+                <!-- Include your code for actions such as update or delete here -->
+            </td>
+       </tr>
+    <?php endwhile; ?>
+</table>
+
 
 
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
@@ -707,7 +750,6 @@
 <h1>Welcome to the Dashboard</h1>
 
 <h2>Problem Reports</h2>
-<?php include 'problem_reports.php'; ?>
 
 </body>
 </html>
