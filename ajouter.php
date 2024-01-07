@@ -46,6 +46,7 @@
        
        <!--style.css-->
        <link rel="stylesheet" href="assets/css/style-explore.css">
+       <link rel="stylesheet" href="css\ajouter.css">
        
        <!--responsive.css-->
        <link rel="stylesheet" href="assets/css/responsive.css">
@@ -134,53 +135,47 @@
 
 		</section><!-- /.top-area-->
 		<!-- top-area End -->
-
+<div class='wrapper'>
 <form action="" method = "POST">
-        <div class= titre>
-                    titre
-                    <input type="text" name="title" id="title">
-                    
-                </div>
 
-<div class="images">
-
-<h2>image:</h2>
-
-<input type="text" name="image" id="image">
-                </div>
-                               
-          <div class= "description" >
-            <h1>  description:</h1>
-         
-          <input type="text" name="desc" id="desc">
- 
-
-</div>      
-        
-
-
-<div class="prix">
-prix: 
-<input type="text" name="price" id="price">
+<div class="mb-3">
+  <label for="titre" class="form-label">Titre</label>
+  <input type="text" class="form-control" id="titre" placeholder="Titre">
+</div>
+<div class="mb-3" style="margin:10px 0 10px 0;">
+<div class="custom-file">
+    
+  <label class="custom-file-label" for="customFile">Choisir une image</label>
+  <input type="file" class="custom-file-input" id="customFile">
+</div>
 
 </div>
 
-<div class="date">
-    date: annee/mois/jour
-    <input type="text" name="date" id="date">
 
-<div class="wilaya">
-    wilaya:
-    <input type="text" name="wilaya" id="wilaya">
+		<!-- img -->
+<div class="mb-3">
+  <label for="desc" class="form-label">Description</label>
+  <textarea class="form-control" id="desc" rows="3"></textarea>
+</div>
+<div class="mb-3">
+  <label for="prix" class="form-label">Prix</label>
+  <input type="text" class="form-control" id="prix" placeholder="¨Prix">
 </div>
 
-<div class="categorie">
-    categorie:
-    <input type="text" name="categorie" id="categorie">
+<div class="mb-3">
+  <label for="date" class="form-label">Date</label>
+  <input type="text" class="form-control" id="date" placeholder="¨Date">
 </div>
 
+<div class="mb-3">
+  <label for="tel" class="form-label">Telephone</label>
+  <input type="text" class="form-control" id="tel" placeholder="Telephone">
+</div>
 
-
+<div class="mb-3">
+  <label for="ad" class="form-label">Adresse</label>
+  <input type="text" class="form-control" id="adresse" placeholder="">
+</div>
 
     <script>
 $(document).ready(function() {
@@ -198,23 +193,9 @@ $(document).ready(function() {
 
 </script>
 
-</div>
 
-<div class="tel" >
-    tel: 
-    <input type="text" name="tel" id="tel">
-</div>
-
-<div class="adresse" >
-    adresse:
-    <input type="text" name="adresse" id="adresse">
-</div>
-     
-
-<div id="button">
-<button>
-    <input type="submit" value="ajouter" name="ajouter" id="ajouter">
-</button>
+<div class="ajout">
+<input class="btn btn-primary " type="submit" value="Ajouter">
 </div>
 
 
@@ -269,7 +250,7 @@ if (isset($_POST['title']) && isset($_POST['desc']) && isset($_POST['price']) &&
 
 
 </form>
-
+</div>
 
 	<!--footer start-->
 	<footer id="footer"  class="footer">

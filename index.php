@@ -154,7 +154,7 @@ if(isset($_SESSION['username'])){
 								?>
 
 								<?php 
-									if($_SESSION['isAdmin']==true){
+									if($_SESSION['isAdmin']=true){
 ?>
 										<li ><a href='dashboard.php'>dashboard</a></li>
 <?php
