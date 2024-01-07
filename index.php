@@ -73,6 +73,7 @@ if(isset($_SESSION['username'])){
 ?>
 
 
+
 		<!--[if lte IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
@@ -100,7 +101,7 @@ if(isset($_SESSION['username'])){
 								<a href="login.php">sign in</a>
 							</li>
 							<li class="header-top-contact">
-								<form  id='logout'>
+								<form action="logout.php"  id='logout' method="POST">
 									
 									<input type="submit" name="logout">
 								</form>
