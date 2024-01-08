@@ -139,14 +139,14 @@
 <form action="" method = "POST">
 
 <div class="mb-3">
-  <label for="titre" class="form-label">Titre</label>
-  <input type="text" class="form-control" id="titre" placeholder="Titre">
+  <label for="title" class="form-label">Titre</label>
+  <input type="text" class="form-control" name="title" id="title" placeholder="Titre">
 </div>
 <div class="mb-3" style="margin:10px 0 10px 0;">
 <div class="custom-file">
     
   <label class="custom-file-label" for="customFile">Choisir une image</label>
-  <input type="file" class="custom-file-input" id="customFile">
+  <input type="file" class="custom-file-input" id="image" name="image">
 </div>
 
 </div>
@@ -155,26 +155,53 @@
 		<!-- img -->
 <div class="mb-3">
   <label for="desc" class="form-label">Description</label>
-  <textarea class="form-control" id="desc" rows="3"></textarea>
+  <textarea class="form-control" id="desc" name="desc" rows="3"></textarea>
 </div>
 <div class="mb-3">
-  <label for="prix" class="form-label">Prix</label>
-  <input type="text" class="form-control" id="prix" placeholder="¨Prix">
+  <label for="price" class="form-label">Prix</label>
+  <input type="text" class="form-control" name="price" id="price" placeholder="¨Prix">
 </div>
 
 <div class="mb-3">
   <label for="date" class="form-label">Date</label>
-  <input type="text" class="form-control" id="date" placeholder="¨Date">
+  <input type="text" class="form-control" name="date" id="date" placeholder="¨Date">
 </div>
 
 <div class="mb-3">
   <label for="tel" class="form-label">Telephone</label>
-  <input type="text" class="form-control" id="tel" placeholder="Telephone">
+  <input type="text" class="form-control" name="tel" id="tel" placeholder="Telephone">
 </div>
 
 <div class="mb-3">
   <label for="ad" class="form-label">Adresse</label>
-  <input type="text" class="form-control" id="adresse" placeholder="">
+  <input type="text" class="form-control" name="adresse" id="adresse" placeholder="">
+</div>
+
+<div class="mb-3">
+  <label for="cat" class="form-label">categorie</label>
+
+    <select class="form-control" id="categorie" name="categorie">
+        <option value="fete">Fête</option>
+        <option value="sport">Sport</option>
+        <option value="culture">Culture</option>
+        <option value="autre">Autre</option>
+    </select>
+
+ 
+</div>
+
+
+<div class="mb-3">
+  <label for="wil" class="form-label">wilaya</label>
+
+    <select class="form-control" id="wilaya" name="wilaya">
+        <option value="Alger">Alger</option>
+        <option value="Oran">Oran</option>
+        <option value="Bejaia">Bejaia</option>
+        <option value="autre">Autre *preciser dans l'adresse</option>
+    </select>
+
+ 
 </div>
 
     <script>
@@ -195,8 +222,9 @@ $(document).ready(function() {
 
 
 <div class="ajout">
-<input class="btn btn-primary " type="submit" value="Ajouter">
+<input class="btn btn-primary " type="submit" value="Ajouter" name="ajouter" id="ajouter">
 </div>
+
 
 
 <script>
@@ -204,7 +232,7 @@ $(document).ready(function() {
     // Function to validate the form inputs
     function validateForm() {
 
-        var titre = $('#titre').val();
+        var titre = $('#title').val();
         var desc = $('#desc').val();
         var price = $('#price').val();
         var date = $('#date').val();
@@ -215,7 +243,7 @@ $(document).ready(function() {
         var wilaya = $('#wilaya').val();
 
 
-        if (titre==='' || desc === '' || price === '' || date === '' || tel === '' || adresse === '' || image === '' || categorie === '' || wilaya === '') {
+        if (title==='' || desc === '' || price === '' || date === '' || tel === '' || adresse === '' || image === '' || categorie === '' || wilaya === '') {
             alert('Please complete all the inputs');
             return false;
         }
@@ -242,14 +270,13 @@ if (isset($_POST['title']) && isset($_POST['desc']) && isset($_POST['price']) &&
     $image = $_POST['image'];
     $categorie = $_POST['categorie'];
     $wilaya = $_POST['wilaya'];
-    $activite = new Activite($titre, $price, $date, $tel, $adresse, $wilaya, $categorie, $image, $desc, 2000);
+    $activite = new Activite($titre, $price, $date, $tel, $adresse, $wilaya, $categorie, $image, $desc, $_SESSION['id']);
     $activite->save();
 }
 ?>
 
-
-
 </form>
+
 </div>
 
 	<!--footer start-->

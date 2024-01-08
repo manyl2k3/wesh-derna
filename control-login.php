@@ -37,6 +37,7 @@ exit;
         $_SESSION['isAdmin'] = false;
         $_SESSION['username'] = $user->getUsername();
         $_SESSION['id']=$user->getId();
+        
         header("Location: index.php");
 exit;
     }

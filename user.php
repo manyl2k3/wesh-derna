@@ -1,5 +1,5 @@
 <?php
-$bd = new PDO('mysql:host=localhost;dbname=wesh-derna', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING));
+$bd = new PDO('mysql:host=localhost;dbname=weshderna', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING));
 
 
 
@@ -36,7 +36,7 @@ public function getUsername()
 
     try {
         $host = 'localhost';
-  $dbname = 'wesh-derna';
+  $dbname = 'weshderna';
   $username = 'root';
   $password = '';
         $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
@@ -82,9 +82,10 @@ public function getId()
         $stmt->execute();
 
         while ($row = $stmt->fetch()) {
-            $id = $row['user_id'];
+            $id1 = $row['user_id'];
           }
-            return $id;
+          
+            return $id1;
             
         }
 

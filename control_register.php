@@ -14,6 +14,7 @@ if(isset($_GET['username'])){
 $_SESSION['username'] = $username;
 $_SESSION['id']=$user->getId();
 
+
 if($username == "admin"){
     $_SESSION['isAdmin'] = true;
    
@@ -22,11 +23,10 @@ $user->save();
 }
 
 else{
-    $_SESSION['isAdmin'] = true;
+    $_SESSION['isAdmin'] = false;
     $user->SetAdmin(false);
 $user->save();
 }
-
 header("Location: index.php");
 exit;
 

@@ -214,16 +214,16 @@ try {
       
 <div class="titre" style="position: relative;">
     <?php echo $titre; ?>
-    <div class="prix" style="position: absolute; top: 0; right: 0;">
+    <div class="prix" style="position: absolute; top: 0; right: 0; font-size:55px;">
         prix: <?php echo $prix; ?>da
     </div>
 </div>  
 
-<h4>
+<h4 style =" margin-left: 50px;">
     nombre de signalements:
 </h4>
 
-<div id="nb_report" >
+<div id="nb_report" style =" margin-left: 50px;" >
 
 <?php
     $stmt = $pdo->prepare("SELECT report FROM activité WHERE activité_id = :id");
@@ -238,7 +238,7 @@ try {
     ?>
 </div>
 
-   <form  id="signal">
+   <form  id="signal"style =" margin-left: 50px;">
  <input type="hidden" id="id" value="<?php echo $id; ?>">
  <input type="submit" name="report" class="btn btn-danger" name="signaler">
 </form>
@@ -276,27 +276,29 @@ try {
                 </div>
 
                 </div>
-                               
-          <div class= "description" >
-            <p1>
-            <?php echo $description; ?></p1>          
- 
-</div> 
-
-
-
-<div class="date" >
-    date: <?php echo $date; ?>
-    </div>
-
-
-
-<div class="categorie" >
-    categorie: <?php echo $categorie; ?>
+<div class="description" style="margin-left: 50px; margin-bottom:-200px;">
+    <p3><?php echo $description; ?></p3>
 </div>
 
+                               
+          
 
-<div class="note" >
+
+
+<div class="date" style =" margin-left: 50px; font-size:20px;" >
+    date: <?php echo $date; ?>
+    
+    </div>
+
+</br>
+
+<div class="categorie" style =" margin-left: 50px; font-size:20px;" >
+    categorie: <?php echo $categorie; ?>
+</div>
+</br>
+
+<div class="note" style =" margin-left: 50px; ">
+<div class="etoiles" style =" margin-left: 50px; font-size: 50px; "   >
 <?php
 
 $full_stars = floor($note);
@@ -305,6 +307,7 @@ $empty_stars = 5 - $full_stars - $half_star;
 
 echo str_repeat('★', $full_stars) . str_repeat('½', $half_star) . str_repeat('☆', $empty_stars) ;
 ?>
+</div>
 
 
    <form  id="noter">
@@ -346,21 +349,18 @@ $(document).ready(function() {
 
 
 
-<div class="tel" >
+<div class="tel" style =" margin-left: 50px;">
     tel:<?php echo $tel; ?>
 </div>
 
-<div class="adresse" >
+<div class="adresse" style =" margin-left: 50px;" >
     adresse: <?php echo $adresse; ?>
 </div>
      
-<div class="wilaya" >
+<div class="wilaya" style =" margin-left: 50px;">
     wilaya: <?php echo $wilaya; ?>
 
 
-    
-<div class="adresse">
-    adresse: <?php echo $adresse; ?>
 
 
 

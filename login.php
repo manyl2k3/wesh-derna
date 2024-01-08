@@ -18,7 +18,7 @@
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-md-6 text-center mb-5">
-					<h2 class="heading-section">Login #10</h2>
+					<h2 class="heading-section">Login </h2>
 					
 				</div>
 			</div>
@@ -26,7 +26,7 @@
 				<div class="col-md-6 col-lg-4">
 					<div class="login-wrap p-0">
 		      	<h3 class="mb-4 text-center">Have an account?</h3>
-		      	<form action="control-login.php" method='get' class="signin-form">
+		      	<form action="control-login.php" class="signin-form">
 		      		<div class="form-group">
 		      			<input type="text" class="form-control" placeholder="Email" id='email' name='email' required>
 		      		</div>

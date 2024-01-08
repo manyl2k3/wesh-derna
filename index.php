@@ -66,12 +66,14 @@
 
 <?php
 
-if(isset($_SESSION['username'])){
-	echo $_SESSION['username'];
+
+if(isset($_SESSION['id'])){
+	echo '    connecté à: '.$_SESSION['username'];
+	
+
 }
 
 ?>
-
 
 
 		<!--[if lte IE 9]>
@@ -101,7 +103,7 @@ if(isset($_SESSION['username'])){
 								<a href="login.php">sign in</a>
 							</li>
 							<li class="header-top-contact">
-								<form action="logout.php"  id='logout' method="POST">
+								<form  id='logout'>
 									
 									<input type="submit" name="logout">
 								</form>
@@ -145,7 +147,7 @@ if(isset($_SESSION['username'])){
 			                    <li class=" scroll active"><a href="#home">home</a></li>
 
 								<?php 
-									if(isset($_SESSION['username'])){
+									if(isset($_SESSION['id'])){
 										
 ?>
 										<li ><a href='ajouter.php'>add</a></li>
@@ -154,7 +156,7 @@ if(isset($_SESSION['username'])){
 								?>
 
 								<?php 
-									if($_SESSION['isAdmin']=true){
+									if($_SESSION['isAdmin']==true){
 ?>
 										<li ><a href='dashboard.php'>dashboard</a></li>
 <?php
@@ -180,9 +182,9 @@ if(isset($_SESSION['username'])){
 		<section id="home" class="welcome-hero">
 			<div class="container">
 				<div class="welcome-hero-txt">
-					<h2>best place to find and explore <br> that all you need </h2>
+					<h2>find the best event and activities <br> in your wilaya </h2>
 					<p>
-						Find Best Place, Restaurant, Hotel, Real State and many more think in just One click 
+						Find Best activites, event, parties and many more in just One click 
 					</p>
 				</div>
 				<div class="welcome-hero-serch-box">
@@ -190,8 +192,15 @@ if(isset($_SESSION['username'])){
 						<div class="single-welcome-hero-form">
 							<h3>what?</h3>
 							<form action="recherche.php" method="POST">
-								<input type="text" id="type" name="type" placeholder="Ex: evenement, activités..." />
-							
+
+							<select class="form-control" id="type" name="type" placeholder="Ex: evenement, activités...">
+								<option value="fete">Fête</option>
+								<option value="sport">Sport</option>
+								<option value="culture">Culture</option>
+								<option value="autre">Autre</option>
+							</select>
+
+								
 							<div class="welcome-hero-form-icon">
 								<i class="flaticon-list-with-dots"></i>
 							</div>
@@ -199,8 +208,13 @@ if(isset($_SESSION['username'])){
 						<div class="single-welcome-hero-form">
 							<h3>wilaya</h3>
 							
-								<input type="text" id="location" name="location" placeholder="Ex: Alger, Oran, Bejaia..." />
-							
+							<select class="form-control" id="location" name="location">
+								<option value="Alger">Alger</option>
+								<option value="Oran">Oran</option>
+								<option value="Bejaia">Bejaia</option>
+								<option value="autre">Autre *preciser dans l'adresse</option>
+							</select>
+
 							<div class="welcome-hero-form-icon">
 								<i class="flaticon-gps-fixed-indicator"></i>
 							</div>
